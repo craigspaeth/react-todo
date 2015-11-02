@@ -1,0 +1,30 @@
+{
+  "name": "react-todo",
+  "version": "1.0.0",
+  "description": "Exampl React app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "c": "browserify index.jsx -o bundle.js -t babelify",
+    "c2": "browserify index.jsx -t reactify --outfile bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigspaeth/react-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craigspaeth/react-todo/issues"
+  },
+  "homepage": "https://github.com/craigspaeth/react-todo#readme",
+  "dependencies": {
+    "babel": "^6.0.15",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "reactify": "^1.1.1",
+    "underscore": "^1.8.3"
+  }
+}
