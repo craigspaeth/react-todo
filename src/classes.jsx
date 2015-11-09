@@ -1,14 +1,6 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
-var _ = require('underscore');
 
-var todos = [
-  "Get the milk",
-  "Watch the netflix",
-  "Write the code"
-];
-
-var TodoApp = React.createClass({
+var TodoApp = module.exports.TodoApp = React.createClass({
   getInitialState: function() {
     return { todos: this.props.todos };
   },
@@ -29,7 +21,7 @@ var TodoApp = React.createClass({
   }
 });
 
-var TodoInput = React.createClass({
+var TodoInput = module.exports.TodoInput = React.createClass({
   onAdd: function() {
     this.props.onAddTodo(this.refs.input.value);
   },
@@ -41,7 +33,7 @@ var TodoInput = React.createClass({
   }
 });
 
-var TodoList = React.createClass({
+var TodoList = module.exports.TodoList = React.createClass({
   render: function() {
     var props = this.props;
     var lists = props.todos.map(function(todo, index) {
@@ -57,7 +49,7 @@ var TodoList = React.createClass({
 });
 
 
-var TodoItem = React.createClass({
+var TodoItem = module.exports.TodoItem = React.createClass({
   onRemoveTodo: function(event) {
     this.props.onRemoveTodo(this.props.index);
   },
@@ -68,5 +60,3 @@ var TodoItem = React.createClass({
     </li>;
   }
 });
-
-ReactDOM.render(<TodoApp todos={todos} />, document.querySelector('#container'));
