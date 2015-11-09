@@ -1,4 +1,6 @@
+var _ = require('underscore');
 var React = require('react');
+var $ = require('jquery');
 
 var TodoApp = module.exports.TodoApp = React.createClass({
   getInitialState: function() {
@@ -37,10 +39,9 @@ var TodoList = module.exports.TodoList = React.createClass({
   render: function() {
     var props = this.props;
     var lists = props.todos.map(function(todo, index) {
-      console.log(props)
       return <TodoItem
         todo={todo}
-        key={index}
+        key={todo}
         index={index}
         onRemoveTodo={props.onRemoveTodo} />
     });
@@ -50,13 +51,23 @@ var TodoList = module.exports.TodoList = React.createClass({
 
 
 var TodoItem = module.exports.TodoItem = React.createClass({
+  getInitialState: function() {
+    return { removing: false };
+  },
   onRemoveTodo: function(event) {
-    this.props.onRemoveTodo(this.props.index);
+    this.setState({ removing: true });
+    window.$.ajax({
+      url: 'https://api.artsy.net/api/v1/system/up',
+      success: function() {
+        this.props.onRemoveTodo(this.props.index);
+      }.bind(this)
+    });
   },
   render: function() {
     return <li>
-      {this.props.todo}
+      {this.state.removing ? '...' : this.props.todo}
       <button onClick={this.onRemoveTodo}>X</button>
+      <br/><br/><br/><br/><br/>
     </li>;
   }
 });
