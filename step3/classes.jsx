@@ -1,4 +1,5 @@
 var React = require('react');
+var _ = require('underscore');
 
 var TodoApp = module.exports.TodoApp = React.createClass({
   getInitialState: function() {
@@ -14,7 +15,7 @@ var TodoApp = module.exports.TodoApp = React.createClass({
     this.setState({ todos: newTodos });
   },
   render: function() {
-    return <div>
+    return <div id='container'>
       <TodoInput onAddTodo={this.onAddTodo} />
       <TodoList onRemoveTodo={this.onRemoveTodo} todos={this.state.todos} />
     </div>;
@@ -22,14 +23,15 @@ var TodoApp = module.exports.TodoApp = React.createClass({
 });
 
 var TodoInput = module.exports.TodoInput = React.createClass({
-  onAdd: function() {
+  onAdd: function(e) {
+    e.preventDefault();
     this.props.onAddTodo(this.refs.input.value);
   },
   render: function() {
-    return <div>
-      <input ref="input" placeholder="add a todo item" />
+    return <form onSubmit={this.onAdd}>
+      <input ref="input" placeholder="Take out the dog" />
       <button onClick={this.onAdd} >Add Todo</button>
-    </div>;
+    </form>;
   }
 });
 

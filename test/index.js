@@ -1,10 +1,10 @@
 require('node-jsx').install({extension: '.jsx'});
 var React = require('react');
 var cheerio = require('cheerio');
-var TodoItem = require('../src/classes.jsx').TodoItem;
-var TodoList = require('../src/classes.jsx').TodoList;
-var TodoInput = require('../src/classes.jsx').TodoInput;
-var TodoApp = require('../src/classes.jsx').TodoApp;
+var TodoItem = require('../step3/classes.jsx').TodoItem;
+var TodoList = require('../step3/classes.jsx').TodoList;
+var TodoInput = require('../step3/classes.jsx').TodoInput;
+var TodoApp = require('../step3/classes.jsx').TodoApp;
 
 describe('TodoItem', function() {
 

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r should",
-    "start": "open out/index.html && watchify src/index.jsx -t reactify --outfile out/bundle.js"
+    "1": "browserify step1/index.jsx -t reactify --outfile out/bundle.js",
+    "2": "browserify step2/index.jsx -t reactify --outfile out/bundle.js",
+    "3": "browserify step3/index.jsx -t reactify --outfile out/bundle.js"
   },
   "repository": {
     "type": "git",

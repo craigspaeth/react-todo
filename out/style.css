@@ -1,0 +1,68 @@
+/* CSS Reset */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {
+  font-size: 16px;
+  font-family: Helvetica;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+h1 {
+  width: 400px;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+#container {
+  width: 400px;
+  margin: auto;
+}
+
+input {
+  width: 298px;
+  margin-bottom:  10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background: black;
+  color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+li {
+  padding: 20px 10px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+li button {
+  border: 0;
+  background: transparent;
+  font-weight: bold;
+  right: 0;
+  top: 10px;
+  border: 1px solid #ccc;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50px;
+  color: #ccc;
+  font-size: 12px;
+  position: absolute;
+  cursor: pointer;
+}
